@@ -15,7 +15,7 @@ def transcribe(content):
   content = re.sub(r'显示"(.*?)"', replace2,content)
   def replace3(match):
     return f'print({match.group(1)})'
-  content = re.sub(r'显示(\w+)', replace3,content)
+  content = re.sub(r'显示(.*)', replace3,content)
   content = re.sub("，","\n",content)
   content = re.sub("小或等同于", "<=", content)
   content = re.sub(r"(\w+)设定为", r"\1=", content)
