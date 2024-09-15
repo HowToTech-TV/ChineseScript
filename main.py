@@ -33,8 +33,8 @@ with col2:
         data=txt,
         file_name=f"{title}.cscript"
     )
-    col4 = st.button("执行程式")
-    if col4:
+    def on_click():
+        global txt
         content = transcribe(txt)
         with open("cache.py", "w") as file:
             file.write(content)
@@ -43,6 +43,8 @@ with col2:
         st.session_state["fuck"] = output.decode("utf-8")
         st.session_state["shit"] = content
         
+    col4 = st.button("执行程式", on_click=on_click)
+    
     
 x = st.file_uploader("上传文件", type=["txt"])
 if x is not None:
