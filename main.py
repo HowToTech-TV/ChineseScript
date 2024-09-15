@@ -42,7 +42,7 @@ with col2:
         output = subprocess.Popen(command, stdout = subprocess.PIPE).communicate()[0]
         st.session_state["fuck"] = output.decode("utf-8")
         st.session_state["shit"] = content
-        st.experimental_rerun()
+        st.rerun()
         
     
 x = st.file_uploader("上传文件", type=["txt"])
@@ -51,7 +51,7 @@ if x is not None:
     for line in x:
         content = content + line.decode("utf-8") + "\n"
     st.session_state["default"] = content
-    st.experimental_rerun()
+    st.rerun()
         
 
  
