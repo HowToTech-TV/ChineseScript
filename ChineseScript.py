@@ -24,7 +24,6 @@ def transcribe(content):
   content = re.sub("整数化","int",content)
   content = re.sub("浮点化","float",content)
   content = re.sub("序列化","list",content)
-    return f"if {match.group(1)}:"
   content = re.sub("如果", "if ", content)
   content = re.sub("大或等同于", ">=", content)
   content = re.sub("等于", "==", content)
