@@ -52,6 +52,7 @@ if x is not None:
     for line in x:
         content = content + line.decode("utf-8") + "\n"
     st.session_state["default"] = content
+    st.rerun()
         
 
  
